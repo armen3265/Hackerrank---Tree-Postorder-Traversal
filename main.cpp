@@ -52,21 +52,21 @@ class Node {
 
 
     void postOrder(Node *root) {
-        stack<Node> nodes, finalStack;
-        nodes.push(*root);
+        stack<Node*> nodes, finalStack;
+        nodes.push(root);
         while(!nodes.empty())
         {
             auto t = nodes.top();
             nodes.pop();
-            if(t.left)
+            if(t->left)
             {
-                postOrder(t.left);
+                postOrder(t->left);
             }
-            if(t.right)
+            if(t->right)
             {
-                postOrder(t.right);
+                postOrder(t->right);
             }
-            std::cout<<t.data<<" ";
+            std::cout<<t->data<<" ";
         }
     }
 
